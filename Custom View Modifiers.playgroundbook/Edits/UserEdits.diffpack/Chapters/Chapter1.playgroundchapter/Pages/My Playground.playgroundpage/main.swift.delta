@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/* 
+ How to create a custom modifier.
+ */
+
+import SwiftUI
+
+/// Custom view Modifier.
+struct CustomModifier: ViewModifier {
+    func body(content: Content) -&gt; some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+    }
+}
+
+/// Makes calling this modifier easier. You only now need to type .title() as a modifier.
+extension View {
+    func title() -&gt; some View {
+        modifier(CustomModifier())
+    }
+}
+
+/// Usage:
+Text("Hello, world!")
+    .title()
+
+/// Instead of:
+Text("Hello, world!")
+    .modifier(CustomModifier())
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 562}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
